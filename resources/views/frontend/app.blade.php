@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel React Redux TypeScript</title>
+        <title>Laravel React Redux TypeScript - Frontend</title>
 
     
     </head>
     <body>
         <div id="app"></div>
     </body>
-    <script src="js/app.js"></script>
+    <script src="frontend/js/app.js"></script>
 </html>

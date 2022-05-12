@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
+
+
+/*Route::group(['prefix' => 'admin'], function()
+{ 
+    Route::get('/', function () { return view('backend.app'); });  
 });
+//Route::get('/', function () { return view('frontend.app'); });
+*/
+
+Route::view('/admin/{path?}','backend.app');
+Route::view('/{path?}','frontend.app');
+
+
