@@ -1,15 +1,13 @@
+import React from 'react';
+// @ts-ignore
+import AppRoutes from './routes/AppRoutes' 
 
-function Index() {
+
+const Index = () =>
+{
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Backend  Component</div>
-                       
-                    </div>
-                </div>
-            </div>
+        <div>
+            <AppRoutes />
         </div>
     );
 }

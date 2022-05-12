@@ -11,5 +11,5 @@
     <body>
         <div id="app"></div>
     </body>
-    <script src="backend/js/app.js"></script>
+    <script src="{{asset('backend/js/app.js')}} "></script>
 </html>
