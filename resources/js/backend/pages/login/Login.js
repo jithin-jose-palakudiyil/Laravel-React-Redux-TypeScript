@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import Cookies from 'js-cookie'
 import  './style.css'
 // @ts-ignore
 import { sendLoginCredentials } from "../../redux/actions";
@@ -14,6 +15,8 @@ const Login = () => {
   /* Input state initialize  */
   const [input, setInput] = useState({ email: "", password: ""});
 
+ 
+
   /* submitBtn onClick Handler  */
   const loginHandler = () => {
     
@@ -24,11 +27,18 @@ const Login = () => {
       //console.log(response);
 
       if (response?.data?.access_token) {
-        sessionStorage.setItem(
+         
+        Cookies.set('authToken', JSON.stringify(response?.data?.access_token), { expires: 2 })
+        //console.log(Cookies.get(),'setCookie'); // Pacman
+        //Cookies.remove('name')
+        //console.log(Cookies.get(),'removeCookie'); // Pacman
+
+       /* sessionStorage.setItem(
           "authToken",
           JSON.stringify(response?.data?.access_token)
         );
-        sessionStorage.setItem("authUser", JSON.stringify(response?.data?.user));
+        sessionStorage.setItem("authUser", JSON.stringify(response?.data?.user));*/
+        
       }
       navigate("/admin/dashboard");
     };

@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index() {
        return response()->json([
-            'access_token' => '123',
+            'access_token' => "123456",
             'token_type' => 'bearer',
             //'expires_in' => auth('backend_api')->factory()->getTTL() * 10,
             'user' => '1'
