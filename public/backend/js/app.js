@@ -5416,18 +5416,18 @@ var Login = function Login() {
       if (response !== null && response !== void 0 && (_response$data = response.data) !== null && _response$data !== void 0 && _response$data.access_token) {
         var _response$data2;
 
+        /* set authToken to Cookies and make the expiry in 2 days */
         js_cookie__WEBPACK_IMPORTED_MODULE_2__["default"].set('authToken', JSON.stringify(response === null || response === void 0 ? void 0 : (_response$data2 = response.data) === null || _response$data2 === void 0 ? void 0 : _response$data2.access_token), {
           expires: 2
-        }); //console.log(Cookies.get(),'setCookie'); // Pacman
-        //Cookies.remove('name')
-        //console.log(Cookies.get(),'removeCookie'); // Pacman
-
+        });
         /* sessionStorage.setItem(
            "authToken",
            JSON.stringify(response?.data?.access_token)
          );
          sessionStorage.setItem("authUser", JSON.stringify(response?.data?.user));*/
       }
+      /* Redirect to dashboard */
+
 
       navigate("/admin/dashboard");
     };
@@ -5437,6 +5437,8 @@ var Login = function Login() {
     var errorHandler = function errorHandler(error) {
       console.log(error, 'error');
     };
+    /* Call dispatch for get redux  */
+
 
     dispatch((0,_redux_actions__WEBPACK_IMPORTED_MODULE_4__.sendLoginCredentials)(input, successHandler, errorHandler));
   };
@@ -5772,11 +5774,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var PrivateRoute = function PrivateRoute(_ref) {
   var children = _ref.children;
-  var auth = js_cookie__WEBPACK_IMPORTED_MODULE_1__["default"].get('authToken'); //sessionStorage.getItem("authToken") || localStorage.getItem("authToken"); //js-cookie used
+  var auth = js_cookie__WEBPACK_IMPORTED_MODULE_1__["default"].get('authToken'); // get authToken from cookies 
 
-  var location = (0,react_router__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
+  var location = (0,react_router__WEBPACK_IMPORTED_MODULE_4__.useLocation)(); //This hook returns the location object used by the react-router
 
   if (!auth) {
+    // check cookies have authToken
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router__WEBPACK_IMPORTED_MODULE_4__.Navigate, {
       replace: true,
       to: "/admin/login",

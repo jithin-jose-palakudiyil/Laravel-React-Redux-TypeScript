@@ -27,12 +27,11 @@ const Login = () => {
       //console.log(response);
 
       if (response?.data?.access_token) {
-         
-        Cookies.set('authToken', JSON.stringify(response?.data?.access_token), { expires: 2 })
-        //console.log(Cookies.get(),'setCookie'); // Pacman
-        //Cookies.remove('name')
-        //console.log(Cookies.get(),'removeCookie'); // Pacman
 
+        /* set authToken to Cookies and make the expiry in 2 days */
+        Cookies.set('authToken', JSON.stringify(response?.data?.access_token), { expires: 2 })
+
+       
        /* sessionStorage.setItem(
           "authToken",
           JSON.stringify(response?.data?.access_token)
@@ -40,6 +39,8 @@ const Login = () => {
         sessionStorage.setItem("authUser", JSON.stringify(response?.data?.user));*/
         
       }
+
+      /* Redirect to dashboard */
       navigate("/admin/dashboard");
     };
 
@@ -49,10 +50,9 @@ const Login = () => {
      
     };
 
+    /* Call dispatch for get redux  */
+    dispatch(  sendLoginCredentials(input,successHandler,errorHandler)  );
 
-    dispatch(
-      sendLoginCredentials(input,successHandler,errorHandler)
-    );
 
   }
 
