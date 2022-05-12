@@ -16,7 +16,7 @@ import React from 'react';
 import { render } from 'react-dom'
 import Index from './index.tsx' 
 import { Provider } from "react-redux";
-import { store } from "./store/store";
+import { store } from "./redux/store";
 
 const rootElement = document.getElementById('app');
 

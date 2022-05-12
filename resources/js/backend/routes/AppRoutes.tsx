@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
  
-// @ts-ignore
-import Login from "../pages/login/Login.tsx";
+
+import Login from "../pages/login/Login";
 // @ts-ignore
 import PublicRoutes from "./public/PublicRoutes.tsx";
 // @ts-ignore
