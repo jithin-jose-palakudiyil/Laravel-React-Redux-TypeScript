@@ -2,6 +2,7 @@ import React from 'react'
 import { Navigate, useLocation } from 'react-router';
 
 const PublicRoutes = ({ children }) => {
+ 
 
   const auth = sessionStorage.getItem("authToken") || localStorage.getItem("authToken");
   let location = useLocation();
