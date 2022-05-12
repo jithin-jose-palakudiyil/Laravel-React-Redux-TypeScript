@@ -1,0 +1,14 @@
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 19px;
+  
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
