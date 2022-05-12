@@ -1,18 +1,12 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from "redux";
 import { update } from "lodash";
 import { COMMON } from "../types";
-
-// @ts-ignore
-import Auth from "./auth/authReducer";
-
-//const AdminState = {  prefix: "admin" };
+import Auth from "./authReducer";
 
 const allReducers = combineReducers({
-  //AdminState,
-  Auth 
+  Auth
+  
 });
-
-
 
 const rootReducer = (state, action) => {
   let newState = { ...state };

@@ -1,13 +1,16 @@
-import appRequest from "../../../utils/fetchhandler";
-import { SESSION } from "../../types";
+// @ts-ignore
+import appRequest from "../../utils/fetchhandler";
+
+// @ts-ignore
+import { SESSION } from "../types";
 
 export const sendLoginCredentials = (
   values,
   successHandler,
-  errorHandler
+  errorHandler 
 ) => {
   const fetchOptions = {
-    url: `api/b/v1/auth/login`,
+    url: `auth/login`,
     method: "POST",
     secure: false,
     body: JSON.stringify(values),

@@ -1,6 +1,7 @@
 import axios from "axios";
  
-const serverAPIUrl = process.env.REACT_APP_API_URL;
+//const serverAPIUrl = process.env.MIX_REACT_APP_URL;
+const serverAPIUrl ='http://127.0.0.1:8000/api/';
 
 const appRequest = (
   {
@@ -10,32 +11,25 @@ const appRequest = (
     body,
     secure = false,
     fileUpload = false,
-  }: any,
-  successHandler: any = null,
-  errorHandler: any = null
-) => {
-  const authToken: any =
-    sessionStorage.getItem("authToken") || localStorage.getItem("authToken");
-  return (dispatch: any) => {
-    const triggerSuccessHandler = (response: any) => {
+  },
+  successHandler = null,
+  errorHandler = null
+) => 
+{
+  const authToken = sessionStorage.getItem("authToken") || localStorage.getItem("authToken");
+
+   
+ 
+  return (dispatch) => {
+    const triggerSuccessHandler = (response) => {
       dispatch({
         type: actionType,
         payload: response,
       });
-
-      if (
-        response.data.token_status === 1 ||
-        response.data.token_status === 2 ||
-        response.data.token_status === 3
-      ) {
-        sessionStorage.clear();
-        localStorage.clear();
-       
-        window.location.replace("/");
-      }
-
+ 
       return successHandler ? successHandler(response) : null;
     };
+
 
     const headersData = {
       Accept: fileUpload ? "multipart/form-data" : "application/json",
@@ -75,5 +69,18 @@ const appRequest = (
         return errorHandler ? errorHandler(errorObj) : null;
       });
   };
+
+
+
+
+
+
+
+
+
+
+
+
+  
 };
 export default appRequest;
