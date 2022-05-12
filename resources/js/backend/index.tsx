@@ -1,6 +1,6 @@
 import React from 'react';
 // @ts-ignore
-import AppRoutes from './routes/AppRoutes' 
+import AppRoutes from './routes/AppRoutes.tsx' 
 
 
 const Index = () =>
