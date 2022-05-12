@@ -11,5 +11,6 @@
     <body>
         <div id="app"></div>
     </body>
-    <script src="frontend/js/app.js"></script>
+    <script src="{{asset('frontend/js/app.js')}} "></script>
+  
 </html>

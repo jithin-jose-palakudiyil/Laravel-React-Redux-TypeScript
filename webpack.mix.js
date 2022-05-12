@@ -1,5 +1,8 @@
 const mix = require('laravel-mix');
 
+
+
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -26,3 +29,4 @@ mix.js('resources/js/frontend/app.js', 'public/frontend/js')
 mix.js('resources/js/backend/app.js', 'public/backend/js')
 .react()
 .sass('resources/sass/backend/app.scss', 'public/backend/css');
+
