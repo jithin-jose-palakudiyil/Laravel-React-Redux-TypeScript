@@ -1,7 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 
-function App() {
+function Index() {
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -17,6 +15,4 @@ function App() {
     );
 }
 
-export default App;
-
-
+export default Index;
