@@ -12,7 +12,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 
 
 
-const AppBar = ({ drawerWidth,toggleDrawer, open }) => {
+const AppBar = ({ drawerWidth, toggleDrawer, open }) => {
 
 
     const AppBar = styled(MuiAppBar, {

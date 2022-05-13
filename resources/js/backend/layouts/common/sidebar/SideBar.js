@@ -7,7 +7,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
-const SideBar = ({drawerWidth, toggleDrawer,open}) => {
+const SideBar = ({drawerWidth, toggleDrawer, open}) => {
 
     const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
         ({ theme, open }) => ({
@@ -36,6 +36,7 @@ const SideBar = ({drawerWidth, toggleDrawer,open}) => {
       );
 
   return (
+
     <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
