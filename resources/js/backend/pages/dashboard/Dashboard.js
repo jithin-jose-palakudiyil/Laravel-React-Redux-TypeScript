@@ -1,9 +1,11 @@
 import React from 'react'
-import  './style.css'
+
 
 const Dashboard = () => {
+const st ={margin:100}
   return (
-    <div>Hello World!</div>
+    //https://github.com/mui/material-ui/blob/v5.7.0/docs/data/material/getting-started/templates/dashboard/Dashboard.js
+    <div style={st}>Hello World!</div>
   )
 }
 
